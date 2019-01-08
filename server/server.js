@@ -13,11 +13,11 @@ app.use(express.static(__dirname+'./../public'));
 app.use((req,res,next)=>{
     var now = new Date().toString();
     var log = `${now} ${req.method} ${req.url}`;
-    fs.appendFile('app.log',log+'\n',(err)=>{
+    /*fs.appendFile('app.log',log+'\n',(err)=>{
         if(err){
             console.log('Unable to write into file');
         }
-    });
+    });*/
     next();
 });
 
